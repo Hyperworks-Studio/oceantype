@@ -1,26 +1,34 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    --color-sanguine: oklch(0.33 0.15 10);
+    --color-radiance: oklch(0.67 0.28 23);
+    --color-clementine: oklch(0.65 0.17 49);
+    --color-halcyon: oklch(0.86 0.15 83);
+    --color-solstice: oklch(0.93 0.17 98);
+    --color-verdant: oklch(0.91 0.22 136);
+    --color-valiant: oklch(0.39 0.21 268);
+    --color-abyss: oklch(0.23 0.1 255);
+    --color-meridian: oklch(0.59 0.11 224);
+    --color-quasar: oklch(0.87 0.17 172);
+    --color-hollow: oklch(0.32 0.09 152);
+    --color-jade: oklch(0.55 0.14 142);
+    --color-wisteria: oklch(0.7 0.19 301);
+    --color-sovereign: oklch(0.45 0.25 295);
+    --color-pulsar: oklch(0.7 0.31 331);
+    --color-cupid: oklch(0.7 0.18 12);
+    --color-dynasty: oklch(0.51 0.17 359);
+    --color-parchment: oklch(0.95 0.02 82);
+    --color-exile: oklch(0.32 0 0);
+    --color-pewter: oklch(0.58 0.02 248);
+    --color-shadow: oklch(0.4 0.05 212);
+    --color-sandglass: oklch(0.7 0.05 72);
+    --color-turpentine: oklch(0.36 0.05 57);
+    --color-sage: oklch(0.87 0.05 128);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+    body {
+        font-family: var(--font-geist-sans);
+    }
 }
