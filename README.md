@@ -6,7 +6,7 @@
   
   <p align="center">Cast your thoughts into the ocean</p>
 
-[![License](https://img.shields.io/github/license/Hyperworks-Studio/oceantype?style=for-the-badge)](https://github.com/Hyperworks-Studio/oceantype/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/Hyperworks-Studio/oceantype?style=for-the-badge)](https://github.com/Hyperworks-Studio/oceantype/blob/master/LICENSE)
 
 </div>
 
