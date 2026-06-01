@@ -3,7 +3,7 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 
 export const metadata: Metadata = {
-    title: "App",
+    title: "oceantype",
 };
 
 const geistSans = Geist({
