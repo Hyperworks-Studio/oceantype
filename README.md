@@ -1,7 +1,7 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/Hyperworks-Studio/oceantype/refs/heads/main/public/oceantype.svg" alt="oceantype" width="400"/>
-
+  <img src="https://raw.githubusercontent.com/Hyperworks-Studio/oceantype/refs/heads/master/public/oceantype.svg" alt="oceantype" width="400"/>
+  
   <h1 align="center"><b>oceantype</b></h1>
   
   <p align="center">Cast your thoughts into the ocean</p>
