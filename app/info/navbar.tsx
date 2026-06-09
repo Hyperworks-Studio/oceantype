@@ -9,11 +9,11 @@ export default function Navbar() {
     const router = useRouter();
 
     return (
-        <nav className="fixed top-0 left-0 right-0 m-2 navbar gap-2 flex items-center">
+        <nav className="fixed top-0 left-0 right-0 m-2 navbar gap-2 flex items-center h-14">
             <Image
                 className="absolute translate-y-1/5"
                 draggable={false}
-                src={"/oceantype.svg"}
+                src={"/oceantype.png"}
                 alt="oceantype"
                 width={200}
                 height={30}

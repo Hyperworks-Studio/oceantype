@@ -13,10 +13,10 @@ interface Message {
 }
 
 // ─── tuning knobs ────────────────────────────────────────────────
-const FEED_INTERVAL_MS = 500; // how often the dice is rolled (ms)
-const RECENT_WINDOW_MS = 1000; // window to count "fresh" messages (ms)
+const FEED_INTERVAL_MS = 250; // how often the dice is rolled (ms)
+const RECENT_WINDOW_MS = 5000; // window to count "fresh" messages (ms)
 const BASE_CHANCE = 0.5; // base probability of recycling per tick
-const CHANCE_REDUCTION = 0.1; // probability drop per fresh message in window
+const CHANCE_REDUCTION = 0.075; // probability drop per fresh message in window
 const MIN_CHANCE = 0.01; // floor — never fully stops recycling
 // ─────────────────────────────────────────────────────────────────
 

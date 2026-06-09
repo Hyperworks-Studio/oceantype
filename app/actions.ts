@@ -1,12 +1,27 @@
 "use server";
 
-//import openai from "@/lib/openai";
 import supabaseServer from "@/lib/supabaseServer";
 import { headers } from "next/headers";
+
+import {
+    RegExpMatcher,
+    TextCensor,
+    englishDataset,
+    englishRecommendedTransformers,
+} from "obscenity";
+
+const matcher = new RegExpMatcher({
+    ...englishDataset.build(),
+    ...englishRecommendedTransformers,
+});
 
 export async function sendMessage(message: string) {
     if (message.length > 300) {
         return { success: false, error: "Message is too long!" };
+    }
+
+    if (matcher.hasMatch(message)) {
+        return { success: false, error: "Message is inappropriate" };
     }
 
     // get ip

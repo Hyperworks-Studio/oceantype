@@ -18,7 +18,6 @@ export default async function Current() {
             <Navbar init={messageCount} />
             <Ocean />
             <LightRays />
-
             <MessageInput />
         </div>
     );

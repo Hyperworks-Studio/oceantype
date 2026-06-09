@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 
 export default function PrivacyAndTOS() {
     return (
-        <div className="bg-linear-to-b from-meridian to-abyss py-16 px-4">
+        <div className="bg-linear-to-b from-meridian to-abyss py-16 px-4 min-h-screen">
             <Navbar />
 
             <div className="max-w-2xl mx-auto space-y-8">
@@ -75,7 +75,7 @@ export default function PrivacyAndTOS() {
                     </ul>
                 </div>
 
-                <div className="fixed bottom-0 left-0 w-full border-t border-white/10 pt-4 pb-6 text-center text-white/40 text-sm bg-abyss">
+                <div className="fixed bottom-0 left-0 w-full pt-4 pb-4 text-center text-white/40 text-sm">
                     <div className="flex items-center justify-center gap-2">
                         <p>© 2026 Hyperworks Studio</p>
 
