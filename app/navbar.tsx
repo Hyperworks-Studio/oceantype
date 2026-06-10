@@ -10,21 +10,22 @@ export default function Navbar({ init }: { init: number }) {
     const router = useRouter();
 
     return (
-        <nav className="navbar m-2 gap-2 flex items-center h-14">
+        <nav className="relative navbar m-2 gap-2 flex items-center flex-wrap md:flex-nowrap">
             <Image
-                className="absolute translate-y-1/5"
+                className="absolute top-0 left-0"
                 draggable={false}
                 src={"/oceantype.png"}
                 alt="oceantype"
                 width={200}
                 height={30}
             />
+            <div className="flex-1 order-1" />
 
-            <div className="flex-1" />
+            <div className="w-full flex justify-center md:w-auto order-3 md:order-2 mt-10 md:mt-0">
+                <Counter initialCount={init} />
+            </div>
 
-            <Counter initialCount={init} />
-
-            <div className="flex-1 flex justify-end gap-2">
+            <div className="flex-1 flex justify-end gap-2 md:order-3 order-2">
                 <Button
                     onClick={() => {
                         router.push("/info");

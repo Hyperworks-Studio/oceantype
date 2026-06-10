@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ViewTransition } from "react";
 
 export const metadata: Metadata = {
     title: "oceantype",
@@ -26,7 +27,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                {children}
+                <ViewTransition>{children}</ViewTransition>
             </body>
         </html>
     );

@@ -32,3 +32,54 @@
         font-family: var(--font-geist-sans);
     }
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 300ms;
+}
+
+::view-transition-old(root) {
+    animation: 150ms ease-out both fade-out;
+}
+
+::view-transition-new(root) {
+    animation: 210ms ease-in 90ms both fade-in;
+}
+
+@keyframes fade-out {
+    to {
+        filter: blur(4px);
+    }
+}
+
+@keyframes fade-in {
+    to {
+        filter: blur(4px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+    }
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+textarea {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
