@@ -69,6 +69,11 @@ export default function PrivacyAndTOS() {
                         </p>
 
                         <p>
+                            This is also uploaded to the hackclub star dance
+                            challenge!
+                        </p>
+
+                        <p>
                             Built with nextjs, tailwindcss, motion,
                             react-spring, jotai and supabase.
                         </p>

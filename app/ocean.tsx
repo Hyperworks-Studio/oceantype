@@ -3,8 +3,9 @@
 import supabase from "@/lib/supabase";
 import { useEffect, useRef, useState } from "react";
 import FloatingMessage from "./components/floatingmessage";
-import { useAtom, useSetAtom } from "jotai";
-import { canSpawn, counterAtom } from "./atoms";
+import { useAtom } from "jotai";
+import { canSpawn } from "./atoms";
+import { isMobile } from "react-device-detect";
 
 interface Message {
     id: string;
@@ -13,7 +14,7 @@ interface Message {
 }
 
 // ─── tuning knobs ────────────────────────────────────────────────
-const FEED_INTERVAL_MS = 250; // how often the dice is rolled (ms)
+const FEED_INTERVAL_MS = isMobile ? 1000 : 250; // how often the dice is rolled (ms)
 const RECENT_WINDOW_MS = 5000; // window to count "fresh" messages (ms)
 const BASE_CHANCE = 0.5; // base probability of recycling per tick
 const CHANCE_REDUCTION = 0.075; // probability drop per fresh message in window
@@ -24,7 +25,6 @@ export default function Ocean() {
     const [messagesState, setMessagesState] = useState<Message[]>([]);
     const recentTimestamps = useRef<number[]>([]);
     const hiddenQueue = useRef<Message[]>([]);
-    const count = useSetAtom(counterAtom);
     const [spawn, setSpawn] = useAtom(canSpawn);
 
     // realtime — fresh messages appear immediately
@@ -41,8 +41,6 @@ export default function Ocean() {
                         ),
                         Date.now(),
                     ];
-
-                    count((prev) => prev + 1);
 
                     if (spawn) {
                         setMessagesState((prev) => [
@@ -67,7 +65,7 @@ export default function Ocean() {
                 hiddenQueue.current = [];
 
                 queue.forEach((message, i) => {
-                    const delay = Math.max(50, 1000 / queue.length) * i;
+                    const delay = 750;
                     setTimeout(() => {
                         setMessagesState((prev) => [...prev, message]);
                     }, delay);
@@ -80,7 +78,7 @@ export default function Ocean() {
             supabase.removeChannel(listener);
             document.removeEventListener("visibilitychange", handler);
         };
-    }, [count, setSpawn, spawn]);
+    }, [setSpawn, spawn]);
 
     // recycle an old message
     useEffect(() => {

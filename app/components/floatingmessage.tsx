@@ -7,6 +7,7 @@ import {
     useAnimationFrame,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 interface FloatingMessageProps {
     content: string;
@@ -36,7 +37,7 @@ export default function FloatingMessage({
 
     // raw cursor target positions during drag
     const targetX = useMotionValue(0);
-    const targetY = useMotionValue(-150);
+    const targetY = useMotionValue(isMobile ? -300 : -150);
 
     // visual positions spring toward the target
     const springX = useSpring(targetX, {

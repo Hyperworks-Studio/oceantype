@@ -6,7 +6,7 @@ import Counter from "./components/counter";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
-export default function Navbar({ init }: { init: number }) {
+export default function Navbar() {
     const router = useRouter();
 
     return (
@@ -22,7 +22,7 @@ export default function Navbar({ init }: { init: number }) {
             <div className="flex-1 order-1" />
 
             <div className="w-full flex justify-center md:w-auto order-3 md:order-2 mt-10 md:mt-0">
-                <Counter initialCount={init} />
+                <Counter />
             </div>
 
             <div className="flex-1 flex justify-end gap-2 md:order-3 order-2">
