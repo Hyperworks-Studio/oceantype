@@ -5,7 +5,7 @@ import Navbar from "./navbar";
 
 export default async function Current() {
     return (
-        <div className="h-screen overflow-hidden">
+        <div className="h-screen overflow-hidden overscroll-none">
             <Navbar />
             <Ocean />
             <LightRays />
