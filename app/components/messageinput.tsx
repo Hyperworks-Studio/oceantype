@@ -33,7 +33,7 @@ export default function MessageInput() {
         <form
             onSubmit={async (e) => {
                 e.preventDefault();
-                if (limit || message === "") return;
+                if (limit || message.trim() === "") return;
                 setMessage("");
                 if (textareaRef.current) {
                     textareaRef.current.style.height = "";
